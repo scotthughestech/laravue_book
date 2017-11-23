@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.js Basics</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Team Tasks</h1>
+        <h2>John Smith</h2>
+        <task-manager></task-manager>
+        <h2>Jane Doe</h2>
+        <task-manager></task-manager>
+    </div>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script>
+        Vue.component('task-manager', {
+            template: `
+                <div>
+                    <ul>
+                        <li v-for="task in tasks">{{ task }}</li>
+                    </ul>
+                    <input type="text" v-model="newTask" @keyup.enter="addTask">
+                    <button @click="addTask">Add Task</button>
+                </div>
+            `,
+            data() {
+                return {
+                    newTask: '',
+                    tasks: []
+                }
+            },
+            methods: {
+                addTask() {
+                    this.tasks.push(this.newTask);
+                    this.newTask = '';
+                }
+            }
+        });
+        const app = new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.js Basics</title>
+</head>
+<body>
+    <div id="app">
+        <p>The question is: {{ question }}</p>
+        <p>The response is: {{ response }}</p>
+    </div>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                question: "What is your name?",
+                response: "I don't have one."
+            }
+        });
+    </script>
+</body>
+</html>

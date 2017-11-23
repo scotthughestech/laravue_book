@@ -1,0 +1,11 @@
+$purchase = new App\Purchase;
+
+$purchase->user_id = 1;
+
+$purchase->date = '2017-11-21';
+
+$purchase->price = 4;
+
+$purchase->description = 'Coffee Mug';
+
+$purchase->save();

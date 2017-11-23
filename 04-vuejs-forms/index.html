@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.js Basics</title>
+</head>
+<body>
+    <div id="app">
+        <p>Enter your name: <input type="text" v-model="name" @keyup.enter="sayHi"></p>
+        <p><button @click="sayHi">Say Hi!</button></p>
+    </div>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                name: ''
+            },
+            methods: {
+                sayHi() {
+                    alert('Hi there, ' + this.name);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
